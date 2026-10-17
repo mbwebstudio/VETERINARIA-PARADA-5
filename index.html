@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Veterinaria Parada 5 · Punta del Este</title>
+<meta name="description" content="Clínica Veterinaria Parada 5 en Av. Pedragosa Sierra, Punta del Este. Consultas, vacunas y urgencias. Lunes a viernes de 9 a 19 h y sábados de 9 a 13 h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F8FB; --surface:#FFFFFF; --ink:#173A4A; --muted:#4D6875;
+  --accent:#D9483C; --accent-ink:#FFFFFF; --soft:#FFE0D6; --line:#D6E5EC;
+  --display:Sora, system-ui, sans-serif; --body:Sora, system-ui, sans-serif;
+  --r:20px; --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.08;letter-spacing:-0.03em}
+h2{font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:18px;max-width:18ch}
+.section-lead{color:var(--muted);max-width:56ch;margin-bottom:40px}
+section{padding:96px 0}
+svg.i{width:20px;height:20px;flex:none}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{border:2px solid currentColor}
+.stars{color:var(--star, var(--accent));letter-spacing:2px}
+
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.35rem;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.1}
+.logo .mark{width:34px;height:34px;flex:none}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:10px 18px;font-size:.95rem}
+@media(max-width:860px){.nav ul{display:none}}
+@media(max-width:480px){.nav .btn span{display:none}.logo{font-size:1.1rem}}
+
+.hero{padding:72px 0 96px}
+.hero h1{font-size:clamp(2.6rem,6.6vw,4.6rem);margin:0 0 22px;max-width:14ch}
+.lead{font-size:1.18rem;color:var(--muted);max-width:44ch;margin-bottom:32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.rating{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:30px;color:var(--muted);font-size:.95rem}
+.rating b{color:var(--ink)}
+.visual svg{width:100%;height:auto;display:block}
+.hero-split .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero-band{background:var(--soft)}
+.hero-band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-center .wrap{text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-center h1{max-width:16ch}
+.hero-center .lead{margin-left:auto;margin-right:auto}
+.hero-center .cta-row,.hero-center .rating{justify-content:center}
+.hero-center .visual{width:min(420px,80%);margin-bottom:28px}
+@media(max-width:860px){.hero-split .wrap,.hero-band .wrap{grid-template-columns:1fr}.hero .visual{max-width:380px}}
+
+.services{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));column-gap:48px;border-top:2px solid var(--ink)}
+.services li{padding:28px 28px 32px 0;border-bottom:1px solid var(--line)}
+.services h3{font-size:1.45rem;margin-bottom:8px}
+.services p{color:var(--muted);max-width:40ch}
+
+.place{background:var(--surface)}
+.place .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.place p{max-width:52ch;margin-bottom:14px}
+.facts{list-style:none;display:grid;gap:14px}
+.facts li{display:flex;gap:16px;align-items:baseline;padding:18px 22px;background:var(--bg);border-radius:var(--r);border:1px solid var(--line)}
+.facts b{font-family:var(--display);font-size:1.6rem;font-weight:800;min-width:4.5ch;color:var(--accent-strong, var(--ink))}
+@media(max-width:860px){.place .wrap{grid-template-columns:1fr}}
+
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px}
+.quote{padding-top:22px;border-top:4px solid var(--accent)}
+.quote blockquote{font-size:1.12rem;margin-bottom:14px}
+.quote figcaption{color:var(--muted);font-size:.95rem}
+
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:stretch}
+.info{display:flex;flex-direction:column;gap:22px}
+.info .row{display:flex;gap:14px;align-items:flex-start}
+.info .row a{font-weight:700}
+.hours{border-collapse:collapse;width:100%;max-width:420px}
+.hours caption{text-align:left;font-family:var(--display);font-size:1.4rem;font-weight:800;margin-bottom:10px}
+.hours th,.hours td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);font-weight:400}
+.hours th{color:var(--muted);width:42%}
+.hours-note{display:flex;gap:10px;color:var(--muted)}
+.map{border-radius:var(--r);overflow:hidden;min-height:400px;border:1px solid var(--line);background:var(--soft)}
+.map iframe{width:100%;height:100%;min-height:400px;border:0;display:block}
+@media(max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+
+.closing{background:var(--accent);color:var(--accent-ink);text-align:center}
+.closing h2{margin:0 auto 14px}
+.closing p{max-width:50ch;margin:0 auto 28px;opacity:.9}
+.closing .btn{background:var(--accent-ink);color:var(--accent)}
+
+footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
+.float svg{width:28px;height:28px}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="var(--accent)"/><ellipse cx="17" cy="21" rx="6" ry="5" fill="var(--accent-ink)"/><circle cx="10" cy="15" r="2.6" fill="var(--accent-ink)"/><circle cx="14" cy="10.5" r="2.6" fill="var(--accent-ink)"/><circle cx="20" cy="10.5" r="2.6" fill="var(--accent-ink)"/><circle cx="24" cy="15" r="2.6" fill="var(--accent-ink)"/></svg><span>Veterinaria Parada 5</span></a>
+    <nav aria-label="Principal"><ul><li><a href="#servicios">Servicios</a></li><li><a href="#lugar">El lugar</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+    <a class="btn btn-main" href="tel:+59842499055" ><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Llamar</span></a>
+  </div>
+</header>
+<main>
+<section class="hero hero-band"><div class="wrap"><div class="copy">
+      <h1>La veterinaria de toda la vida en Punta del Este</h1>
+      <p class="lead">Gente local que cuida a tus animales con cariño. Consultas, vacunas y urgencias en Parada 5, sobre Av. Pedragosa Sierra.</p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="tel:+59842499055" ><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Llamar a la clínica</a>
+        <a class="btn btn-ghost" href="#contacto"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</a>
+      </div>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★☆</span> <span><b>4,4</b> en Google (54 reseñas)</span></p></div><div class="visual" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="var(--soft)"/><ellipse cx="100" cy="122" rx="38" ry="32" fill="var(--ink)"/><ellipse cx="58" cy="82" rx="14" ry="18" fill="var(--ink)" transform="rotate(-20 58 82)"/><ellipse cx="84" cy="58" rx="14" ry="19" fill="var(--ink)"/><ellipse cx="116" cy="58" rx="14" ry="19" fill="var(--ink)"/><ellipse cx="142" cy="82" rx="14" ry="18" fill="var(--ink)" transform="rotate(20 142 82)"/><path d="M100 136c-14-10-22-18-22-26a10 10 0 0 1 22-4 10 10 0 0 1 22 4c0 8-8 16-22 26z" fill="var(--accent)"/></svg></div></div></section>
+
+<section id="servicios">
+  <div class="wrap">
+    <h2>Servicios</h2>
+    <p class="section-lead">Para perros, gatos y toda la familia peluda.</p>
+    <ul class="services">
+        <li><h3>Consultas</h3><p>Controles generales y seguimiento de cada paciente.</p></li>
+        <li><h3>Vacunas y desparasitación</h3><p>Plan de vacunación al día para cachorros y adultos.</p></li>
+        <li><h3>Urgencias</h3><p>Si tu mascota tiene una urgencia, llamanos y te atendemos lo antes posible.</p></li>
+        <li><h3>Certificados de viaje</h3><p>Documentación para viajar con tu mascota.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="lugar" class="place">
+  <div class="wrap">
+    <div>
+      <h2>También para quienes están de vacaciones</h2>
+      <p>Muchos turistas nos eligen cuando su mascota necesita atención lejos de su veterinario habitual.</p>
+    </div>
+    <ul class="facts">
+      <li><b>L a V</b><span>de 9 a 19 h</span></li>
+      <li><b>Sáb</b><span>de 9 a 13 h</span></li>
+      <li><b>Parada 5</b><span>Av. Pedragosa Sierra</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="wrap">
+    <h2>Lo que dicen en Google</h2>
+    <p class="section-lead">4,4 de puntaje en Google, con 54 reseñas. Algunas de las más recientes:</p>
+    <div class="quotes">
+        <figure class="quote"><blockquote>“Llevamos a nuestra cachorra de urgencia a la vete, nos atendieron súper rápido y fueron muy amorosos con nosotros y ella. Realmente los chicos son excelentes.”</blockquote><figcaption>Ingrid E. <span class="stars" aria-label="5 estrellas">★★★★★</span></figcaption></figure>
+        <figure class="quote"><blockquote>“Excelente veterinaria de toda la vida, gente local y amorosa con un trato único con los animales.”</blockquote><figcaption>Cosme M. <span class="stars" aria-label="5 estrellas">★★★★★</span></figcaption></figure>
+        <figure class="quote"><blockquote>“Excelente servicio!! Los mejores veterinarios de Punta del Este!”</blockquote><figcaption>Patricia W. <span class="stars" aria-label="5 estrellas">★★★★★</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact" style="padding-top:0">
+
+  <div class="wrap">
+    <div class="info">
+      <h2>Dónde estamos</h2>
+      <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div>Av. Pedragosa Sierra, Parada 5, Punta del Este<br><a href="https://www.google.com/maps/place/Clinica+Veterinaria+Parada+5/data=!4m2!3m1!1s0x9575053ec2b17f3b:0xbb18b73f124c489d" target="_blank" rel="noopener">Abrir en Google Maps</a></div></div>
+      <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><a href="tel:+59842499055">4249 9055</a></div></div>
+      
+      <table class="hours"><caption>Horarios</caption><tr><th scope="row">Lunes</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Martes</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Miércoles</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Jueves</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Viernes</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Sábado</th><td>9:00 a 13:00</td></tr><tr><th scope="row">Domingo</th><td>Cerrado</td></tr></table>
+    </div>
+    <div class="map"><iframe loading="lazy" title="Mapa de Veterinaria Parada 5" src="https://www.google.com/maps?q=-34.9454414%2C-54.9362114&output=embed"></iframe></div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>¿Tu mascota necesita atención?</h2>
+    <p>Llamanos y coordinamos la consulta.</p>
+    <a class="btn" href="tel:+59842499055" ><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Llamar a la clínica</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Veterinaria Parada 5, Punta del Este</span>
+    <span>Av. Pedragosa Sierra, Parada 5, Punta del Este</span>
+  </div>
+</footer>
+<a class="float" href="tel:+59842499055"  aria-label="Llamar"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+</body>
+</html>
