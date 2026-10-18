@@ -11,7 +11,7 @@
 <style>
 :root{
   --bg:#F2F8FB; --surface:#FFFFFF; --ink:#173A4A; --muted:#4D6875;
-  --accent:#D9483C; --accent-ink:#FFFFFF; --soft:#FFE0D6; --line:#D6E5EC;
+  --accent:#005E80; --accent-ink:#FFFFFF; --soft:#DCEEF5; --line:#D6E5EC;
   --display:Sora, system-ui, sans-serif; --body:Sora, system-ui, sans-serif;
   --r:20px; --max:1120px;
 }
@@ -77,6 +77,29 @@ header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 8
 .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px}
 .quote{padding-top:22px;border-top:4px solid var(--accent)}
 .quote blockquote{font-size:1.12rem;margin-bottom:14px}
+.visual.photo{margin:0}.visual.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);display:block}
+.visual.photo figcaption,.gallery figcaption{font-size:.78rem;color:var(--muted);margin-top:6px}
+.visual.photo a,.gallery figcaption a{color:inherit}
+.gallery .grid{columns:4 220px;column-gap:16px}
+.gallery figure{margin:0 0 18px;break-inside:avoid}
+.gallery figure img{width:100%;height:auto;display:block;border-radius:var(--r)}
+.gallery .cap{font-weight:600;font-size:.95rem;color:var(--ink)}
+.place-img{margin-top:22px}.place-img img{width:100%;height:auto;display:block;border-radius:var(--r);border:1px solid var(--line)}
+.place-img figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+.menu{background:var(--surface)}
+.menu details{border-top:2px solid var(--ink)}
+.menu details:last-of-type{border-bottom:2px solid var(--ink)}
+.menu summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:var(--menu-track,.02em)}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary::after{content:'+';color:var(--accent);font-family:var(--body);font-weight:300}
+.menu details[open] summary::after{content:'–'}
+.menu .cat-note{color:var(--muted);margin:-8px 0 16px;font-size:.95rem}
+.menu ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));column-gap:48px;padding-bottom:28px}
+.menu li{padding:12px 0;border-bottom:1px dashed var(--line)}
+.menu .dish{display:flex;justify-content:space-between;gap:16px;font-weight:700}
+.menu .price{font-variant-numeric:tabular-nums;white-space:nowrap}
+.menu li p{color:var(--muted);font-size:.95rem;max-width:46ch}
+.menu .fine{color:var(--muted);font-size:.9rem;margin-top:24px}
 .quote figcaption{color:var(--muted);font-size:.95rem}
 
 .contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:stretch}
@@ -101,13 +124,13 @@ footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
 .float svg{width:28px;height:28px}
-
+.visual{--accent:#5DB4D2}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#"><svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="var(--accent)"/><ellipse cx="17" cy="21" rx="6" ry="5" fill="var(--accent-ink)"/><circle cx="10" cy="15" r="2.6" fill="var(--accent-ink)"/><circle cx="14" cy="10.5" r="2.6" fill="var(--accent-ink)"/><circle cx="20" cy="10.5" r="2.6" fill="var(--accent-ink)"/><circle cx="24" cy="15" r="2.6" fill="var(--accent-ink)"/></svg><span>Veterinaria Parada 5</span></a>
+    <a class="logo" href="#"><img src="logo.png" alt="Veterinaria Parada 5" style="height:46px;width:auto;display:block"></a>
     <nav aria-label="Principal"><ul><li><a href="#servicios">Servicios</a></li><li><a href="#lugar">El lugar</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
     <a class="btn btn-main" href="tel:+59842499055" ><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Llamar</span></a>
   </div>
@@ -120,12 +143,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <a class="btn btn-main" href="tel:+59842499055" ><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Llamar a la clínica</a>
         <a class="btn btn-ghost" href="#contacto"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</a>
       </div>
-      <p class="rating"><span class="stars" aria-hidden="true">★★★★☆</span> <span><b>4,4</b> en Google (54 reseñas)</span></p></div><div class="visual" aria-hidden="true"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="var(--soft)"/><ellipse cx="100" cy="122" rx="38" ry="32" fill="var(--ink)"/><ellipse cx="58" cy="82" rx="14" ry="18" fill="var(--ink)" transform="rotate(-20 58 82)"/><ellipse cx="84" cy="58" rx="14" ry="19" fill="var(--ink)"/><ellipse cx="116" cy="58" rx="14" ry="19" fill="var(--ink)"/><ellipse cx="142" cy="82" rx="14" ry="18" fill="var(--ink)" transform="rotate(20 142 82)"/><path d="M100 136c-14-10-22-18-22-26a10 10 0 0 1 22-4 10 10 0 0 1 22 4c0 8-8 16-22 26z" fill="var(--accent)"/></svg></div></div></section>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★☆</span> <span><b>4,4</b> en Google (54 reseñas)</span></p></div><div class="visual" aria-hidden="true"><div style="background:#fff;border-radius:28px;padding:48px 40px;box-shadow:0 20px 40px -24px rgba(0,60,90,.35)"><img src="logo.png" alt="" style="width:100%;height:auto;display:block"></div></div></div></section>
 
 <section id="servicios">
   <div class="wrap">
     <h2>Servicios</h2>
-    <p class="section-lead">Para perros, gatos y toda la familia peluda.</p>
+    <p class="section-lead">Atención para perros y gatos en cada etapa de su vida.</p>
     <ul class="services">
         <li><h3>Consultas</h3><p>Controles generales y seguimiento de cada paciente.</p></li>
         <li><h3>Vacunas y desparasitación</h3><p>Plan de vacunación al día para cachorros y adultos.</p></li>
@@ -134,6 +157,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     </ul>
   </div>
 </section>
+
+
+
 
 <section id="lugar" class="place">
   <div class="wrap">
@@ -145,6 +171,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <li><b>L a V</b><span>de 9 a 19 h</span></li>
       <li><b>Sáb</b><span>de 9 a 13 h</span></li>
       <li><b>Parada 5</b><span>Av. Pedragosa Sierra</span></li>
+      
     </ul>
   </div>
 </section>
@@ -168,6 +195,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <h2>Dónde estamos</h2>
       <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div>Av. Pedragosa Sierra, Parada 5, Punta del Este<br><a href="https://www.google.com/maps/place/Clinica+Veterinaria+Parada+5/data=!4m2!3m1!1s0x9575053ec2b17f3b:0xbb18b73f124c489d" target="_blank" rel="noopener">Abrir en Google Maps</a></div></div>
       <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><a href="tel:+59842499055">4249 9055</a></div></div>
+      
       
       <table class="hours"><caption>Horarios</caption><tr><th scope="row">Lunes</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Martes</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Miércoles</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Jueves</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Viernes</th><td>9:00 a 19:00</td></tr><tr><th scope="row">Sábado</th><td>9:00 a 13:00</td></tr><tr><th scope="row">Domingo</th><td>Cerrado</td></tr></table>
     </div>
